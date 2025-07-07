@@ -4,7 +4,7 @@
 # 更多的插件可以前往此处安装 https://github.com/luestr/ProxyResource/blob/main/README.md
 
 [General]
-ip-mode = v4-only
+ip-mode = dual
 ipv6-vif = off
 dns-server = system
 sni-sniffing = true
