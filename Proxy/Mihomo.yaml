@@ -20,7 +20,7 @@ proxy-providers:
     #override: # 修改节点前后缀时，需移除前方的 "#" 符号
       #additional-prefix: "节点前缀"
       #additional-suffix: "节点后缀"
-  Subscribe2: {url: https://sub.tms.us.kg/cD7wiTGitLyoBdEguAnFWmqCpHKwhLQh4opXfFhFCEpmY9K7Yn/download/%E7%BE%8E%E5%9B%BDVMess-WS-TLS?target=ClashMeta, <<: *p}
+  Subscribe2: {url: https://sub.tms.us.kg/cD7wiTGitLyoBdEguAnFWmqCpHKwhLQh4opXfFhFCEpmY9K7Yn/download/%E7%BE%8E%E5%9B%BDVMess-WS-TLS, <<: *p}
   #Subscribe3: {url: http://your-service-provider, <<: *p}
   #Subscribe4: {url: http://your-service-provider, <<: *p}
 
