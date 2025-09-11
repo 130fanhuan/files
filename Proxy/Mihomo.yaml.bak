@@ -1,4 +1,3 @@
-
 # Author:https://github.com/Repcz
 # TG:https://t.me/QVQ_Channel
 #
@@ -8,19 +7,20 @@
 #
 # Mihomo Version ≥ 1.8.10
 #
-# 最后更新时间: 2025-02-13 22:10
+# 最后更新时间: 2025-09-04 19:30
 #
 # ================
 
 p: &p {type: http, interval: 86400, health-check: {enable: true, url: http://1.1.1.1/generate_204, interval: 1800, timeout: 5000}}
 proxy-providers:
   Subscribe: # 在此将 "http://your-service-provider" 替换为你的机场订阅，推荐使用 base64 或者 node list
-    url: http://your-service-provider
+    url: https://fm-sub-mainpanel-vygijfogpm.cn-shanghai.fcapp.run/api/v1/client/subscribe?token=b5efc2524080596161bdd16f479c1bad
     <<: *p
+    exclude-filter: "剩余|到期"
     #override: # 修改节点前后缀时，需移除前方的 "#" 符号
       #additional-prefix: "节点前缀"
       #additional-suffix: "节点后缀"
-  #Subscribe2: {url: http://your-service-provider, <<: *p}
+  Subscribe2: {url: https://sub.tms.us.kg/cD7wiTGitLyoBdEguAnFWmqCpHKwhLQh4opXfFhFCEpmY9K7Yn/download/%E7%BE%8E%E5%9B%BDVMess-WS-TLS?target=ClashMeta, <<: *p}
   #Subscribe3: {url: http://your-service-provider, <<: *p}
   #Subscribe4: {url: http://your-service-provider, <<: *p}
 
@@ -87,47 +87,58 @@ proxy-groups:
   - {name: 台湾节点, <<: *url-test, filter: "(?i)🇨🇳|🇹🇼|台湾|(\b(TW|Tai|Taiwan)\b)", icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China.png}
 
 rule-providers:
-  AD: {<<: *c, path: ./rules/AD.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Reject.list}
-  Apple: {<<: *c, path: ./rules/Apple.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Apple.list}
-  YouTube: {<<: *c, path: ./rules/YouTube.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/YouTube.list}
-  Google: {<<: *c, path: ./rules/Google.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Google.list}
-  Telegram: {<<: *c, path: ./rules/Telegram.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Telegram.list}
-  Twitter: {<<: *c, path: ./rules/Twitter.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Twitter.list}
-  Steam: {<<: *c, path: ./rules/Steam.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Steam.list}
-  Epic: {<<: *c, path: ./rules/Epic.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Epic.list}
-  AI: {<<: *c, path: ./rules/AI.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/AI.list}
-  Emby: {<<: *c, path: ./rules/Emby.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Emby.list}
-  Spotify: {<<: *c, path: ./rules/Spotify.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Spotify.list}
-  Bahamut: {<<: *c, path: ./rules/Bahamut.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Bahamut.list}
-  Netflix: {<<: *c, path: ./rules/Netflix.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Netflix.list}
-  Disney: {<<: *c, path: ./rules/Disney.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/Disney.list}
-  PrimeVideo: {<<: *c, path: ./rules/PrimeVideo.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/PrimeVideo.list}
-  HBO: {<<: *c, path: ./rules/HBO.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/HBO.list}
-  TikTok: {<<: *c, path: ./rules/TikTok.list, url: https://github.com/Repcz/Tool/raw/X/Clash/Rules/TikTok.list}
+  
+  Direct: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Direct.list}
+  Lan: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Lan.list}
+  Reject: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Reject.list}
+  AppleCN: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleCN.list}
+  AppleProxy: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AppleServers.list}
+  Microsoft: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Microsoft.list}
+  OneDrive: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/OneDrive.list}
+  Github: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Github.list}
+  YouTube: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/YouTube.list}
+  Google: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Google.list}
+  Telegram: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Telegram.list}
+  Twitter: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Twitter.list}
+  Steam: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Steam.list}
+  Epic: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Epic.list}
+  AI: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/AI.list}
+  Emby: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Emby.list}
+  Spotify: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Spotify.list}
+  Bahamut: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Bahamut.list}
+  Netflix: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Netflix.list}
+  Disney: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Disney.list}
+  PrimeVideo: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/PrimeVideo.list}
+  HBO: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/HBO.list}
+  TikTok: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/TikTok.list}
+  CDN: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/CDN.list}
+  Proxy: {<<: *c, url: https://github.com/Repcz/Tool/raw/X/mihomo/Rules/Proxy.list}
 
 rules:
-  - RULE-SET,AD,REJECT
+  - RULE-SET,Direct,DIRECT
+  - RULE-SET,Reject,REJECT
   - RULE-SET,AI,AI
-  - RULE-SET,Apple,苹果服务
+  - RULE-SET,Github,微软服务
+  - RULE-SET,OneDrive,微软服务
+  - RULE-SET,Microsoft,微软服务
   - RULE-SET,YouTube,谷歌服务
   - RULE-SET,Google,谷歌服务
-  - RULE-SET,Telegram,电报消息
-# - PROCESS-NAME,Telegram,REJECT-DROP # For Telegram macOS
   - RULE-SET,Twitter,推特消息
+  - RULE-SET,Telegram,电报消息
   - RULE-SET,Steam,游戏平台
   - RULE-SET,Epic,游戏平台
   - RULE-SET,Emby,Emby
-  - RULE-SET,Spotify,Spotify
   - RULE-SET,Bahamut,国际媒体
   - RULE-SET,Netflix,国际媒体
   - RULE-SET,Disney,国际媒体
   - RULE-SET,PrimeVideo,国际媒体
   - RULE-SET,HBO,国际媒体
   - RULE-SET,TikTok,国际媒体
-  - GEOSITE,onedrive,微软服务
-  - GEOSITE,github,微软服务
-  - GEOSITE,microsoft,微软服务
-  - GEOSITE,gfw,国外网站
-  - GEOIP,private,DIRECT
-  - GEOIP,cn,DIRECT
+  - RULE-SET,Spotify,Spotify
+  - RULE-SET,CDN,国外网站
+  - RULE-SET,Proxy,国外网站
+  - RULE-SET,AppleCN,DIRECT
+  - RULE-SET,AppleProxy,香港节点
+  - RULE-SET,Lan,DIRECT
+  - GEOIP,CN,DIRECT
   - MATCH,兜底分流
