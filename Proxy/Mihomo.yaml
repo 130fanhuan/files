@@ -57,7 +57,7 @@ dns:
   fake-ip-filter: ['*', '+.lan', '+.local', '+.direct', '+.msftconnecttest.com', '+.msftncsi.com']
   nameserver: [223.5.5.5, 119.29.29.29]
   
-  proxies:
+proxies:
   - {"dialer-proxy": "美国中转","skip-cert-verify":true,"type":"trojan","password":"548689bb-dd9d-4327-a644-218b95dba449","server":"74.48.192.33","port":25483,"name":"落地"}
 
 # 锚点参数
